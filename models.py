@@ -20,6 +20,7 @@ class LinearModel:
         # self.encoder = OneHotEncoder(sparse_output=False)
 
         # define self.X and self.y based on feature labels
+        # normalize the data use libary function 
 
         # may get rid of validation depending on project format
         self.X_train, X_temp, self.y_train, y_temp = train_test_split(self.X, self.y, test_size=0.3, random_state=42)
