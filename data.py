@@ -4,12 +4,6 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 pd.set_option("display.max_columns", None)
 
-properties_2016 = pd.read_csv('../zillow-prize-1/properties_2016.csv', low_memory=False)
-properties_2017 = pd.read_csv('../zillow-prize-1/properties_2017.csv', low_memory=False)
-train_2016 = pd.read_csv('../zillow-prize-1/train_2016_v2.csv', low_memory=False)
-train_2017 = pd.read_csv('../zillow-prize-1/train_2017.csv', low_memory=False)
-sample_submission = pd.read_csv('../zillow-prize-1/sample_submission.csv', low_memory=False)
-
 class ZillowDataProcessor:
     def __init__(self, prop_2016_path, prop_2017_path, train_2016_path, train_2017_path):
         self.prop_2016_path = prop_2016_path
@@ -105,13 +99,3 @@ class ZillowDataProcessor:
 
     def get_processed_data(self):
         return self.train_properties
-
-processor = ZillowDataProcessor(
-    '../zillow-prize-1/properties_2016.csv',
-    '../zillow-prize-1/properties_2017.csv',
-    '../zillow-prize-1/train_2016_v2.csv',
-    '../zillow-prize-1/train_2017.csv'
-)
-
-processor.prepare()
-processed_df = processor.get_processed_data()
